@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr" id="html-tag">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title id="site-title">Autres activités • Oscar Diguiny</title>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar" id="main-navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html">Oscar Diguiny</a>
+            </div>
+            <div class="nav-right">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="../index.html" class="nav-link" data-i18n="nav-accueil">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="carriere.html" class="nav-link" data-i18n="nav-carriere">Carrière</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="projets.html" class="nav-link" data-i18n="nav-projets">Mes projets</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="mobilites.html" class="nav-link" data-i18n="nav-mobilite">Mobilité Internationales</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="engagment-civique.html" class="nav-link" data-i18n="nav-engagement">Engagement civique</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="autres-activites.html" class="nav-link" data-i18n="nav-autres">Autres activités</a>
+                    </li>
+                </ul>
+                <div class="language-toggle">
+                    <button id="lang-toggle" class="lang-btn" aria-label="Toggle language">
+                        <span class="lang-text">FR</span>
+                        <span class="lang-text">EN</span>
+                        <span class="lang-slider"></span>
+                    </button>
+                </div>
+            </div>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <div style="max-width: 90vw; margin: 40px auto 0 auto;">
+            <h2 style="text-align: center; margin-bottom: 0.5em;" data-i18n="descente-titre">VTT de descente</h2>
+            <div style="display: flex; justify-content: center; align-items: flex-start; gap: 16px; flex-wrap: nowrap; overflow-x: auto;">
+                <img src="../images/autres-activites/descente-1.jpg" alt="Descente 1" style="display: block; max-width: 20%; height: auto;">
+                <img src="../images/autres-activites/descente-2.jpg" alt="Descente 2" style="display: block; max-width: 20%; height: auto;">
+                <img src="../images/autres-activites/descente-3.jpg" alt="Descente 3" style="display: block; max-width: 20%; height: auto;">
+                <img src="../images/autres-activites/descente-4.jpg" alt="Descente 4" style="display: block; max-width: 20%; height: auto;">
+            </div>
+        </div>
+    </main>
+<script>
+// ================== Traductions =========================
+const translations = {
+    // Navbar
+    "nav-accueil":    { fr: "Accueil", en: "Home" },
+    "nav-carriere":   { fr: "Carrière", en: "Career" },
+    "nav-projets":    { fr: "Mes projets", en: "My Projects" },
+    "nav-mobilite":   { fr: "Mobilité Internationales", en: "International Mobility" },
+    "nav-engagement": { fr: "Engagement civique", en: "Civic Engagement" },
+    "nav-autres":     { fr: "Autres activités", en: "Other Activities" },
+    // Spécifique à cette page
+    "descente-titre": { fr: "VTT de descente", en: "Downhill Mountain Biking" }
+};
+// ========== Gestion du changement de langue ===================
+// Détermine la langue courante (persistance locale)
+let currentLang = localStorage.getItem('lang') || 'fr';
+
+// Appliquer la traduction des textes
+function updateTexts() {
+    document.getElementById('html-tag').setAttribute('lang', currentLang);
+    // Titre HTML/head
+    document.getElementById('site-title').textContent = (currentLang === 'fr')
+        ? "Autres activités • Oscar Diguiny"
+        : "Other Activities • Oscar Diguiny";
+    // Traduction des éléments data-i18n
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        let key = el.getAttribute('data-i18n');
+        if (translations[key]) {
+            el.innerHTML = translations[key][currentLang];
+        }
+    });
+}
+// ==================== DOM READY ===============================
+document.addEventListener('DOMContentLoaded', function() {
+    // Appliquer la langue à la page au chargement
+    updateTexts();
+    // Navbar en bleu dès le chargement
+    const navbar = document.getElementById('main-navbar');
+    if (navbar) {
+        navbar.classList.add('scrolled');
+    }
+    // Menu mobile (hamburger)
+    const hamburger = document.querySelector('.hamburger');
+    const navRight = document.querySelector('.nav-right');
+    if (hamburger && navRight) {
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navRight.classList.toggle('active');
+        });
+        // Fermer le menu mobile au clic sur un lien
+        document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navRight.classList.remove('active');
+        }));
+    }
+    // Bouton de langue
+    const langToggle = document.getElementById('lang-toggle');
+    if (langToggle) {
+        langToggle.addEventListener('click', () => {
+            // Toggle visuel bouton
+            langToggle.classList.toggle('active');
+            // Actualiser la langue
+            currentLang = (currentLang === 'fr') ? 'en' : 'fr';
+            localStorage.setItem('lang', currentLang);
+            updateTexts();
+            // Fermer menu mobile si ouvert
+            if (hamburger && navRight) {
+                hamburger.classList.remove('active');
+                navRight.classList.remove('active');
+            }
+        });
+    }
+});
+</script>
+</body>
+</html>

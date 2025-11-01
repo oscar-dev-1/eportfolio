@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="fr" id="html-tag">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title id="site-title">Engagement civique • Oscar Diguiny</title>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body style="margin:0;padding:0;">
+    <nav class="navbar" id="main-navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html">Oscar Diguiny</a>
+            </div>
+            <div class="nav-right">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="../index.html" class="nav-link" data-i18n="nav-accueil">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="carriere.html" class="nav-link" data-i18n="nav-carriere">Carrière</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="projets.html" class="nav-link" data-i18n="nav-projets">Mes projets</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="mobilites.html" class="nav-link" data-i18n="nav-mobilite">Mobilité Internationales</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="engagment-civique.html" class="nav-link" data-i18n="nav-engagement">Engagement civique</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="autres-activites.html" class="nav-link" data-i18n="nav-autres">Autres activités</a>
+                    </li>
+                </ul>
+                <div class="language-toggle">
+                    <button id="lang-toggle" class="lang-btn" aria-label="Toggle language">
+                        <span class="lang-text">FR</span>
+                        <span class="lang-text">EN</span>
+                        <span class="lang-slider"></span>
+                    </button>
+                </div>
+            </div>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <style>
+        html, body {
+            margin: 0 !important;
+            padding: 0 !important;
+            box-sizing: border-box;
+        }
+
+        .header-engagement {
+            position: relative;
+            width: 100vw;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+            height: 350px;
+            min-height: 220px;
+            background: linear-gradient(120deg,#ffeed4 0%, #fff2d5 100%);
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            z-index: 1;
+            margin-top: 0 !important;
+            padding-top: 0 !important;
+            border-top: none !important;
+        }
+
+        .banner-card {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -64px;
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 8px 24px #a8bbec4d;
+            padding: 36px 38px 28px 38px;
+            min-width: 330px;
+            max-width: 90vw;
+            text-align: center;
+            z-index: 2;
+        }
+
+        .banner-title {
+            font-size: clamp(2rem, 3vw, 2.7rem);
+            font-weight: 800;
+            margin-bottom: 0.7rem;
+            color: var(--texte-primary);
+            letter-spacing: -0.5px;
+        }
+        .banner-desc {
+            font-size: 1.15rem;
+            color: #333a;
+            line-height: 1.5;
+            font-weight: 500;
+            margin-top: 0.2rem;
+        }
+        @media (max-width: 700px) {
+            .header-engagement {
+                height: 170px;
+                min-height: 100px;
+            }
+            .banner-card {
+                padding: 22px 12px 16px 12px;
+                min-width: 0;
+            }
+            .banner-title {
+                font-size: 1.25rem;
+            }
+            .banner-desc { font-size: 1rem; }
+        }
+    </style>
+
+    <div class="header-engagement">
+        <div class="banner-card">
+            <div class="banner-title" data-i18n="banner-title">Engagement Civique</div>
+            <div class="banner-desc" data-i18n="banner-desc">
+                Découvrez ci-dessous quelques-uns de mes investissements associatifs, bénévoles ou citoyens qui m’ont permis ou vont me permettre de contribuer à la société, d’acquérir de nouvelles compétences et de rencontrer des personnes inspirantes.
+            </div>
+        </div>
+    </div>
+    <main style="margin-top:140px;"> <!-- pour laisser l'espace à la bannière -->
+
+    <div style="max-width:1200px;margin:0 auto; margin-top:0;padding:32px 0;display:flex;flex-direction:column;gap:56px;">
+        <!-- Section 1 -->
+        <section class="section-engagement" style="margin-bottom:0;">
+            <div class="container" style="display:flex;flex-wrap:wrap;align-items:center;gap:2.2rem;">
+                <div style="flex:2 1 380px;">
+                    <h2 style="font-weight:bold;font-size:2rem;" data-i18n="section1-title">Projet solidaire au Chili</h2>
+                    <p data-i18n="section1-text">
+                        Avec huit camarades de promotion, nous projetons de réaliser un voyage solidaire au Chili à la fin de l'année scolaire 2026. Nous aimerions trouver une association en accord avec nos valeurs dans le but de réaliser un échange culturel avec la jeunesse locale.
+                    </p>
+                </div>
+                <img src="../images/engagement-civique/enfants-de-dos-chili.jpg" alt="Projet solidaire Chili" style="max-width:450px;width:95%;border-radius:23px;box-shadow: 0 4px 18px #f1c59d38;flex:1 1 330px;align-self:flex-start;margin-top:52px;">
+            </div>
+        </section>
+        <hr style="margin:28px 0;border: none;border-top:1.5px solid #ddd;width:100%;">
+        <!-- Section 2 -->
+        <section class="section-engagement" style="margin-bottom:0;">
+            <div class="container" style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:2rem;flex-direction: row-reverse;">
+                <div style="flex:2 1 380px;display:flex;flex-direction:column;justify-content:flex-start;">
+                    <h2 style="font-weight:bold;font-size:2rem;" data-i18n="section2-title">Fresque du climat</h2>
+                    <p data-i18n="section2-text">
+                        Nous avons réalisé une fresque du climat dans le cadre d'une activité de sensibilisation proposée par mon école. Cette fresque expose les risques climatiques causés par les activités humaines. 
+                        Conscient de la nécessité d'agir, cette activité m'a permis d'en apprendre plus sur les mécanismes du rechauffement climatique et de son impact sur la biodiversité.
+                    </p>
+                </div>
+                <img src="../images/engagement-civique/fresque-climat.png" alt="Fresque du climat" style="max-width:380px;width:95%;border-radius:23px;box-shadow: 0 4px 18px #f1c59d38;flex:1 1 330px;align-self:flex-start;margin-top:0;">
+            </div>
+        </section>
+    </div>
+
+    </main>
+
+<script>
+    // ========== Traductions =========================
+    const translations = {
+        // Navbar
+        "nav-accueil":    { fr: "Accueil", en: "Home" },
+        "nav-carriere":   { fr: "Carrière", en: "Career" },
+        "nav-projets":    { fr: "Mes projets", en: "My Projects" },
+        "nav-mobilite":   { fr: "Mobilité Internationales", en: "International Mobility" },
+        "nav-engagement": { fr: "Engagement civique", en: "Civic Engagement" },
+        "nav-autres":     { fr: "Autres activités", en: "Other Activities" },
+        // Bannière
+        "banner-title":   { fr: "Engagement Civique", en: "Civic Engagement" },
+        "banner-desc":    { 
+            fr: "Découvrez ci-dessous quelques-uns de mes investissements associatifs, bénévoles ou citoyens qui m’ont permis ou vont me permettre de contribuer à la société, d’acquérir de nouvelles compétences et de rencontrer des personnes inspirantes.", 
+            en: "Discover below some of my associative, voluntary or civic involvements that have allowed me or will allow me to contribute to society, acquire new skills, and meet inspiring people." 
+        },
+        // Section Chili
+        "section1-title": { fr: "Projet solidaire au Chili", en: "Solidarity Project in Chile" },
+        "section1-text": {
+            fr: `Avec huit camarades de promotion, nous projetons de réaliser un voyage solidaire au Chili à la fin de l'année scolaire 2026. Nous aimerions trouver une association en accord avec nos valeurs dans le but de réaliser un échange culturel avec la jeunesse locale.`,
+            en: `With eight classmates, we plan to carry out a solidarity trip to Chile at the end of the 2026 academic year. We would like to find an association that shares our values in order to organise a cultural exchange with the local youth.`
+        },
+        // Section Fresque
+        "section2-title": { fr: "Fresque du climat", en: "Climate Fresco" },
+        "section2-text": {
+            fr: `Nous avons réalisé une fresque du climat dans le cadre d'une activité de sensibilisation proposée par mon école. Cette fresque expose les risques climatiques causés par les activités humaines. 
+Conscient de la nécessité d'agir, cette activité m'a permis d'en apprendre plus sur les mécanismes du rechauffement climatique et de son impact sur la biodiversité.`,
+            en: `We carried out a Climate Fresco as part of an awareness-raising activity organised by my school. This fresco highlights the climate risks caused by human activities. 
+Aware of the need to act, this activity taught me more about the mechanisms of global warming and its impact on biodiversity.`
+        }
+    };
+
+    // ==================== Gestion du changement de langue ===================
+    let currentLang = localStorage.getItem('lang') || 'fr';
+    function updateTexts() {
+        document.getElementById('html-tag').setAttribute('lang', currentLang);
+        // Titre HTML/head
+        document.getElementById('site-title').textContent = (currentLang === 'fr')
+            ? "Engagement civique • Oscar Diguiny"
+            : "Civic Engagement • Oscar Diguiny";
+        // Traduction des éléments data-i18n
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            let key = el.getAttribute('data-i18n');
+            if (translations[key]) {
+                el.innerHTML = translations[key][currentLang];
+            }
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        // Appliquer la langue courante au chargement
+        updateTexts();
+
+        // Forcer la navbar en bleu dès le chargement
+        const navbar = document.getElementById('main-navbar');
+        if (navbar) {
+            navbar.classList.add('scrolled');
+        }
+            
+        // Menu mobile (hamburger)
+        const hamburger = document.querySelector('.hamburger');
+        const navRight = document.querySelector('.nav-right');
+        if (hamburger && navRight) {
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navRight.classList.toggle('active');
+            });
+            // Fermer le menu au clic sur un lien
+            document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navRight.classList.remove('active');
+            }));
+        }
+
+        // Bouton de langue: toggle FR/EN & enregistrer la langue
+        const langToggle = document.getElementById('lang-toggle');
+        if (langToggle) {
+            langToggle.addEventListener('click', () => {
+                currentLang = (currentLang === 'fr') ? 'en' : 'fr';
+                localStorage.setItem('lang', currentLang);
+                updateTexts();
+                langToggle.classList.toggle('active', currentLang === 'en');
+                // Si le menu mobile est ouvert, on le ferme
+                if (hamburger && navRight) {
+                    hamburger.classList.remove('active');
+                    navRight.classList.remove('active');
+                }
+            });
+            // Changer l'état visuel du bouton langue si besoin (selon langue mémorisée)
+            langToggle.classList.toggle('active', currentLang === 'en');
+        }
+    });
+</script>
+</body>
+</html>

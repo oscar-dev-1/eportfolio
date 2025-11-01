@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="fr" id="html-tag">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title id="site-title">Carrière • Oscar Diguiny</title>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar" id="main-navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html">Oscar Diguiny</a>
+            </div>
+            <div class="nav-right">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="../index.html" class="nav-link" data-i18n="nav-accueil">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="carriere.html" class="nav-link" data-i18n="nav-carriere">Carrière</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="projets.html" class="nav-link" data-i18n="nav-projets">Mes projets</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="mobilites.html" class="nav-link" data-i18n="nav-mobilite">Mobilité Internationales</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="engagment-civique.html" class="nav-link" data-i18n="nav-engagement">Engagement civique</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="autres-activites.html" class="nav-link" data-i18n="nav-autres">Autres activités</a>
+                    </li>
+                </ul>
+                <div class="language-toggle">
+                    <button id="lang-toggle" class="lang-btn" aria-label="Toggle language">
+                        <span class="lang-text">FR</span>
+                        <span class="lang-text">EN</span>
+                        <span class="lang-slider"></span>
+                    </button>
+                </div>
+            </div>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <div >
+        <section id="projet-professionnel" class="projet-pro-section">
+            <div class="container">
+                <h2 class="section-title" data-i18n="carriere-projet-titre">Projet professionnel</h2>
+                <p data-i18n="carriere-projet-texte">
+                    Étant particulièrement intéressé par le domaine de la robotique et de l’automatisme, j’aimerai en apprendre plus dans ces secteurs. En effet je suis motivé par la réalisation de projets qui mélangent mécanique, électronique et programmation.<br>
+                    Ainsi je me vois potentiellement travailler en bureau d’études, en recherche et développement et également au contact et à l’écoute des clients pour mettre en œuvre des systèmes qui répondent à leurs besoins.
+                </p>
+            </div>
+        </section>
+
+        <!--
+        <section id="parcours" class="timeline-section">
+            <div class="container">
+                <h2 class="section-title" data-i18n="carriere-parcours-titre">Mon Parcours</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date" data-i18n="carriere-n7-date">2025 - Présent</div>
+                            <h3 data-i18n="carriere-n7-titre">ENSEEIHT - École Nationale Supérieure d'Électrotechnique, d'Électronique, d'Informatique, d'Hydraulique et des Télécommunications</h3>
+                            <p class="timeline-subtitle" data-i18n="carriere-n7-sous-titre">Ingénierie Électronique, Énergie Électrique et Automatique</p>
+                            <p data-i18n="carriere-n7-texte">
+                                Spécialisation en systèmes électroniques, automatique et énergie électrique.<br>
+                                Formation d'ingénieur de haut niveau avec projets pratiques et stages en entreprise.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date" data-i18n="carriere-cpge-date">2022 - 2024</div>
+                            <h3 data-i18n="carriere-cpge-titre">Classe Préparatoire aux Grandes Écoles (CPGE)</h3>
+                            <p class="timeline-subtitle" data-i18n="carriere-cpge-sous-titre">PCSI/PSI - Mathématiques, Physique, Sciences de l'Ingénieur</p>
+                            <p data-i18n="carriere-cpge-texte">
+                                Formation intensive de 2 ans préparant aux concours des grandes écoles d'ingénieurs.<br>
+                                Acquisition de solides bases en mathématiques, physique et sciences de l'ingénieur.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date" data-i18n="carriere-bac-date">2019 - 2022</div>
+                            <h3 data-i18n="carriere-bac-titre">Baccalauréat Scientifique</h3>
+                            <p class="timeline-subtitle" data-i18n="carriere-bac-sous-titre">Spécialités Mathématiques, Physique-Chimie et sciences du numérique</p>
+                            <p data-i18n="carriere-bac-texte">Obtention du baccalauréat mention très bien.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    -->
+
+
+        <section id="cv" class="cv-section">
+            <div class="container">
+                <h2 class="section-title" data-i18n="carriere-cv-titre">Mon CV</h2>
+                <div class="cv-pdf-viewer">
+                    <iframe
+                        id="cv-viewer"
+                        src="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://oscar-dev-1.github.io/eportfolio/CV-FR.pdf"
+                        width="100%"
+                        height="800px" 
+                        style="border-radius: 18px; border:1.5px solid #8391b6c0; box-shadow: 0 2px 16px #a8bbec4d; background:#f7fafc;"
+                        allowfullscreen
+                        webkitallowfullscreen
+                        mozallowfullscreen
+                    ></iframe>
+                </div>
+                <div style="text-align:center; margin-top:1rem">
+                    <a id="cv-download" href="../CV-FR.pdf" target="_blank" class="btn btn-primary" data-i18n="carriere-cv-btn">Télécharger le CV</a>
+                </div>
+            </div>
+        </section>
+        <section id="linkedin" class="linkedin-section">
+            <div class="container">
+                <h2 class="section-title" data-i18n="carriere-linkedin-titre">Mon profil LinkedIn</h2>
+                <a href="https://fr.linkedin.com/in/oscar-diguiny-517179385/fr" target="_blank" style="display: flex; justify-content: center; align-items: center;">
+                    <img src="../images/profil-linkedin.png" alt="Profil LinkedIn d'Oscar Diguiny" style="max-width: 700px; width: 80% ; border-radius: 22px; box-shadow: 0 8px 24px #a8bbec4d; border:2px solid #8391b6c0 ;transition: box-shadow 0.3s;">
+                </a>
+            </div>
+            <div style="text-align:center; margin-top:1rem">
+                <a href="https://fr.linkedin.com/in/oscar-diguiny-517179385/fr" target="_blank" class="btn btn-primary" data-i18n="carriere-linkedin-btn">Voir sur LinkedIn</a>
+            </div>
+        </section>
+    </div>
+    
+    
+
+    <script>
+        // Mobile menu and nav scroll (inchangé)
+        const hamburger = document.querySelector('.hamburger');
+        const navRight = document.querySelector('.nav-right');
+        if (hamburger && navRight) {
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navRight.classList.toggle('active');
+            });
+
+            document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navRight.classList.remove('active');
+            }));
+        }
+
+        const navbar = document.getElementById('main-navbar');
+            if (navbar) {
+                navbar.classList.add('scrolled');
+            }
+
+        // Initial state of navbar
+        window.addEventListener('DOMContentLoaded', function() {
+            const navbar = document.getElementById('main-navbar');
+            if (navbar) {
+                navbar.classList.add('scrolled');
+            }
+        });
+
+        // --- Traduction selon modèle index.html, pour éviter le "disparition" ---
+
+        // Définir le dictionnaire de traductions (inchangé, ne pas toucher pour respecter la consigne)
+        const translations = {
+            "nav-accueil":    { fr: "Accueil", en: "Home" },
+            "nav-carriere":   { fr: "Carrière", en: "Career" },
+            "nav-projets":    { fr: "Mes projets", en: "My Projects" },
+            "nav-mobilite":   { fr: "Mobilité Internationales", en: "International Mobility" },
+            "nav-engagement": { fr: "Engagement civique", en: "Civic Engagement" },
+            "nav-autres":     { fr: "Autres activités", en: "Other Activities" },
+            /*,
+            "carriere-projet-sous-titre":         { fr: "Mon projet professionnel", en: "My Professional Plan" },
+            "carriere-projet-description":        { fr: "Mon objectif professionnel est de travailler dans le domaine de l’automatisme et de l’électronique embarquée, notamment dans la robotique intelligente, l’énergie ou la mobilité électrique.", en: "My goal is to work in automation and embedded electronics, especially in intelligent robotics, energy, or electric mobility." },
+            "carriere-valeurs-titre":             { fr: "Mes valeurs et ce qui m'inspire", en: "What Drives Me" },
+            "carriere-valeurs-description":       { fr: "J’accorde une grande importance à l’innovation, la rigueur, et à l’impact positif de la technologie sur la société. J’aime relever des défis techniques, apprendre constamment et collaborer en équipe.", en: "I’m passionate about innovation, engineering rigour, and the positive impact technology can have on society. I enjoy technical challenges, learning new things, and working collaboratively." },
+            "carriere-parcours-titre":            { fr: "Étapes clefs de mon parcours", en: "Key Steps In My Journey" },
+            "carriere-parcours-prepa":            { fr: "Classe préparatoire scientifique (CPGE) – PCSI/PSI", en: "Two years of intensive preparatory classes in maths, physics, and engineering" },
+            "carriere-parcours-n7":               { fr: "Élève-ingénieur à l’ENSEEIHT (N7) – Génie Électrique", en: "Engineering student at ENSEEIHT – Electrical Engineering major" },
+            "carriere-parcours-projets":          { fr: "Projets pratiques : robotique, systèmes embarqués, programmation C / Arduino", en: "Hands-on projects: robotics, embedded systems, C / Arduino programming" },
+            "carriere-parcours-stages":           { fr: "Stages (à venir)", en: "Internships (upcoming)" },
+            "carriere-techniques-titre":          { fr: "Compétences techniques", en: "Technical Skills" },
+            "carriere-techniques-elec":           { fr: "Électronique, systèmes embarqués", en: "Electronics, embedded systems" },
+            "carriere-techniques-robot":          { fr: "Robotique, automatisme", en: "Robotics, automation" },
+            "carriere-techniques-code":           { fr: "Programmation (C, Python, Arduino)", en: "Programming (C, Python, Arduino)" },
+            "carriere-techniques-cao":            { fr: "CAO (SolidWorks, circuits imprimés)", en: "CAD (SolidWorks, PCB design)" },
+            "carriere-personnelles-titre":        { fr: "Compétences personnelles", en: "Personal Qualities" },
+            "carriere-personnelles-curieux":      { fr: "Curieux, esprit d’analyse", en: "Curious, strong analytical skills" },
+            "carriere-personnelles-equipe":       { fr: "Travail en équipe", en: "Team player" },
+            "carriere-personnelles-autonomie":    { fr: "Autonomie", en: "Independent and self-motivated" },
+            "carriere-personnelles-communication": { fr: "Bonne communication", en: "Communicates clearly" },
+            "carriere-contact-titre":             { fr: "Pour échanger à propos de mon parcours&nbsp;:", en: "Want to connect? Let’s talk about my journey:" },
+           */
+           "carriere-projet-titre":              { fr: "Projet Professionnel", en: "Professional Ambitions" },
+           "carriere-projet-texte":         { fr : "Étant particulièrement intéressé par le domaine de la robotique et de l’automatisme, j’aimerai en apprendre plus dans ces secteurs. En effet je suis motivé par la réalisation de projets qui mélangent mécanique, électronique et programmation.<br> Ainsi je me vois potentiellement travailler en bureau d’études, en recherche et développement et également au contact et à l’écoute des clients pour mettre en œuvre des systèmes qui répondent à leurs besoins." , en : "With a strong interest in robotics and automation, I’m eager to further develop my skills in these areas. I’m passionate about projects that bring together mechanics, electronics, and programming. I can see myself working in R&D or engineering design, while also collaborating closely with clients to develop solutions that fit their needs."},
+           "carriere-cv-titre":                   { fr: "Mon CV ", en: "My Resume" },
+            "cv-telecharger-btn":                 { fr: "Télécharger le CV", en: "Download Resume" },
+            "cv-apercu-alt":                      { fr: "Aperçu du CV dans le navigateur", en: "Resume preview in the browser" },
+            "carriere-linkedin-titre":                     { fr: "Mon profil LinkedIn", en: "LinkedIn Profile" },
+            "linkedin-bouton":                    { fr: "Voir sur LinkedIn", en: "View on LinkedIn" },
+            "lang-fr":                            { fr: "FR", en: "FR" },
+            "lang-en":                            { fr: "EN", en: "EN" },
+            // Footer
+            "footer-copyright": { fr: "© 2025 [Oscar Diguiny]. Tous droits réservés.", en: "© 2025 [Oscar Diguiny]. All rights reserved." },
+            "footer-intelligence": { fr: "Site réalisé à l'aide de l'intelligence artificielle", en: "Site built with the help of artificial intelligence" }
+        };
+
+        // Détermination la langue courante
+        let currentLang = localStorage.getItem('lang') || 'fr';
+
+        // Fonction d'application de la traduction (conforme index.html)
+        function updateTexts() {
+            document.getElementById('html-tag').setAttribute('lang', currentLang);
+            // Changer le titre de la page
+            document.getElementById('site-title').textContent = (currentLang === 'fr') ? "Carrière • Oscar Diguiny" : "Career • Oscar Diguiny";
+
+            // On change les textes traduisibles
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                let key = el.getAttribute('data-i18n');
+                if (translations[key]) {
+                    // Si besoin, innerHTML si le texte contient des balises HTML
+                    if (
+                        key.startsWith('career-') ||
+                        key.startsWith('nav-') ||
+                        key === "linkedin-btn"
+                        // Ajoutez d'autres clés comportant des <br> si besoin
+                    ) {
+                        el.innerHTML = translations[key][currentLang];
+                    } else {
+                        el.textContent = translations[key][currentLang];
+                    }
+                }
+            });
+
+            // CV viewer + download links
+            const cvViewerFR = "https://mozilla.github.io/pdf.js/web/viewer.html?file=https://oscar-dev-1.github.io/eportfolio/CV-FR.pdf";
+            const cvViewerEN = "https://mozilla.github.io/pdf.js/web/viewer.html?file=https://oscar-dev-1.github.io/eportfolio/CV-EN.pdf";
+            const cvFileFR = "../CV-FR.pdf";
+            const cvFileEN = "../CV-EN.pdf";
+            if(document.getElementById('cv-viewer')) {
+                document.getElementById('cv-viewer').src = (currentLang === 'fr') ? cvViewerFR : cvViewerEN;
+            }
+            if(document.getElementById('cv-download')) {
+                document.getElementById('cv-download').href = (currentLang === 'fr') ? cvFileFR : cvFileEN;
+                document.getElementById('cv-download').textContent = (currentLang === 'fr') ? "Télécharger le CV" : "Download Resume";
+            }
+
+            // Lien LinkedIn  
+            const linkFr = "https://fr.linkedin.com/in/oscar-diguiny-517179385/fr";
+            const linkEn = "https://www.linkedin.com/in/oscar-diguiny-517179385/en";
+            document.querySelectorAll('.linkedin-section a.btn').forEach(el => {
+                el.textContent = (currentLang === 'fr') ? "Voir sur LinkedIn" : "View on LinkedIn";
+            });
+            // main image link
+            document.querySelectorAll('.linkedin-section a[href*="linkedin.com"]').forEach(el => {
+                el.href = (currentLang === 'fr') ? linkFr : linkEn;
+            });
+        }
+
+        // Fonction toggle langue
+        function toggleLanguage() {
+            currentLang = (currentLang === 'fr') ? 'en' : 'fr';
+            localStorage.setItem('lang', currentLang);
+            // Déplace le slider visuel
+            const langToggle = document.getElementById('lang-toggle');
+            if (langToggle) {
+                langToggle.classList.toggle('active', currentLang === 'en');
+            }
+            updateTexts();
+        }
+
+        // Setup du bouton de langue + état initial
+        window.addEventListener('DOMContentLoaded', function() {
+            // Met à jour UI à l'arrivée sur la page
+            updateTexts();
+            // Place le slider sur la bonne langue
+            const langBtn = document.getElementById('lang-toggle');
+            if (langBtn) {
+                if(currentLang === 'en') langBtn.classList.add('active');
+                langBtn.addEventListener('click', toggleLanguage);
+            }
+        });
+    </script>
+</body>
+</html>
