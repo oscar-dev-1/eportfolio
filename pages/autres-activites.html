@@ -73,14 +73,21 @@ const translations = {
     // Spécifique à cette page
     "descente-titre": { fr: "VTT de descente", en: "Downhill Mountain Biking" }
 };
+
 // ========== Gestion du changement de langue ===================
 // Détermine la langue courante (persistance locale)
 let currentLang = localStorage.getItem('lang') || 'fr';
 
-// Appliquer la traduction des textes
-function updateTexts() {
+// Met à jour tous les textes selon la langue courante
+function updateTexts(lang) {
+    // Met à jour currentLang (et stocke)
+    if (lang) {
+        currentLang = (lang === 'en') ? 'en' : 'fr';
+        localStorage.setItem('lang', currentLang);
+    }
+    // Set lang attr sur <html>
     document.getElementById('html-tag').setAttribute('lang', currentLang);
-    // Titre HTML/head
+    // Page title
     document.getElementById('site-title').textContent = (currentLang === 'fr')
         ? "Autres activités • Oscar Diguiny"
         : "Other Activities • Oscar Diguiny";
@@ -91,11 +98,17 @@ function updateTexts() {
             el.innerHTML = translations[key][currentLang];
         }
     });
+    // Etat visuel du bouton langue
+    const langToggle = document.getElementById('lang-toggle');
+    if (langToggle) {
+        langToggle.classList.toggle('active', currentLang === 'en');
+    }
 }
+
 // ==================== DOM READY ===============================
 document.addEventListener('DOMContentLoaded', function() {
-    // Appliquer la langue à la page au chargement
-    updateTexts();
+    // Appliquer la langue mémorisée (ou défaut)
+    updateTexts(currentLang);
     // Navbar en bleu dès le chargement
     const navbar = document.getElementById('main-navbar');
     if (navbar) {
@@ -118,13 +131,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // Bouton de langue
     const langToggle = document.getElementById('lang-toggle');
     if (langToggle) {
+        // Etat initial du toggle button (actif si 'en')
+        langToggle.classList.toggle('active', currentLang === 'en');
         langToggle.addEventListener('click', () => {
-            // Toggle visuel bouton
-            langToggle.classList.toggle('active');
-            // Actualiser la langue
+            // Bascule la langue
             currentLang = (currentLang === 'fr') ? 'en' : 'fr';
-            localStorage.setItem('lang', currentLang);
-            updateTexts();
+            updateTexts(currentLang);
             // Fermer menu mobile si ouvert
             if (hamburger && navRight) {
                 hamburger.classList.remove('active');
@@ -135,4 +147,5 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 </body>
+
 </html>
