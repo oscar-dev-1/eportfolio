@@ -119,10 +119,17 @@
             <h2 class="section-title" style="font-size: 2.6rem; text-align: center;" data-i18n="about-title">À propos de moi</h2>
             <div style="width: 100%; max-width: 700px; margin: 0 auto;">
                 <!-- Remplace src par le lien de ta vidéo, ou utilise un <iframe> pour une vidéo YouTube/Vimeo -->
-                <video controls style="width: 100%; border-radius: 16px; box-shadow: var(--shadow-lg); background: #000;">
-                    <source src="IMG_1674.mp4" type="video/mp4">
-                    <span data-i18n="video-not-supported">Votre navigateur ne supporte pas la lecture de vidéo.</span>
-                </video>
+                <iframe 
+                    width="100%" 
+                    height="394" 
+                    style="border-radius: 16px; box-shadow: var(--shadow-lg); background: #000; aspect-ratio: 16/9; display: block;"
+                    src="https://www.youtube.com/embed/b--slRp9whA" 
+                    title="Elevator pitch Oscar Diguiny" 
+                    frameborder="0" 
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allowfullscreen>
+                </iframe>
             </div>
         </div>
     </section>
@@ -385,3 +392,4 @@
     </script>
 </body>
 </html>
+
