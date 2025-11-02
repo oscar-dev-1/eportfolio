@@ -553,6 +553,9 @@ void demi_pas_sens_trigo(){
         </div>
     </main>
     <script>
+        // Gestion langue persistée (comme sur les autres pages)
+        let currentLang = localStorage.getItem('lang') || 'fr';
+
         // Fonction pour basculer l'affichage du code
         function toggleCode() {
             const hiddenCode = document.getElementById('hidden-code');
@@ -562,7 +565,7 @@ void demi_pas_sens_trigo(){
             const btnTextEN = "▲ See less";
             const btnTextFRMore = "▼ Voir plus";
             const btnTextENMore = "▼ See more";
-            const langIsEn = document.body.classList.contains('lang-en');
+            const langIsEn = currentLang === 'en';
             if (hiddenCode.style.display === 'none') {
                 hiddenCode.style.display = 'block';
                 button.textContent = langIsEn ? btnTextEN : btnTextFR;
@@ -575,24 +578,42 @@ void demi_pas_sens_trigo(){
         }
 
         function updateLangTexts(lang) {
+            // Met à jour la langue courante et la stocke
+            currentLang = (lang === 'en') ? 'en' : 'fr';
+            localStorage.setItem('lang', currentLang);
+
             // Set lang attr on html
-            document.documentElement.lang = lang === 'en' ? 'en' : 'fr';
+            document.documentElement.lang = currentLang;
             // Page-wide class for CSS/JS
-            document.body.classList.toggle('lang-en', lang === 'en');
+            document.body.classList.toggle('lang-en', currentLang === 'en');
 
             // Update texts using data-fr/data-en attributes
             document.querySelectorAll('[data-fr][data-en]').forEach(el => {
-                el.textContent = (lang === 'en') ? el.getAttribute('data-en') : el.getAttribute('data-fr');
+                el.textContent = (currentLang === 'en') ? el.getAttribute('data-en') : el.getAttribute('data-fr');
             });
             // For h1, set innerHTML for apostrophe
             const h1 = document.querySelector('h1[data-fr][data-en]');
-            if(h1) h1.innerHTML = (lang === 'en') ? h1.getAttribute('data-en') : h1.getAttribute('data-fr');
+            if (h1) h1.innerHTML = (currentLang === 'en') ? h1.getAttribute('data-en') : h1.getAttribute('data-fr');
             // For meta title (optionally update the page title)
-            document.title = (lang === 'en') ? "Building a Camera Stabilizer" : "Réalisation d'un stabilisateur de caméra";
+            document.title = (currentLang === 'en') ? "Building a Camera Stabilizer" : "Réalisation d'un stabilisateur de caméra";
+            // Pour l'état du bouton langue
+            const langToggle = document.getElementById('lang-toggle');
+            if (langToggle) {
+                langToggle.classList.toggle('active', currentLang === 'en');
+            }
+            // Pour le bouton expand (voir plus/moins)
+            const expandBtn = document.querySelector('.expand-button');
+            if (expandBtn) {
+                if (expandBtn.classList.contains('expanded')) {
+                    expandBtn.textContent = (currentLang === 'en') ? "▲ See less" : "▲ Voir moins";
+                } else {
+                    expandBtn.textContent = (currentLang === 'en') ? "▼ See more" : "▼ Voir plus";
+                }
+            }
         }
 
         document.addEventListener('DOMContentLoaded', function() {
-            // Hide the hidden code initially
+            // Init code hidden
             const hiddenCode = document.getElementById('hidden-code');
             if (hiddenCode) hiddenCode.style.display = 'none';
 
@@ -620,20 +641,18 @@ void demi_pas_sens_trigo(){
             }
             // Language toggle button: switch between FR/EN
             const langToggle = document.getElementById('lang-toggle');
-            let langIsEn = false;
-            langToggle.addEventListener('click', function(evt) {
-                langIsEn = !langIsEn;
-                this.classList.toggle('active', langIsEn);
-                updateLangTexts(langIsEn ? 'en' : 'fr');
-                // Update expand button as well
-                const expandBtn = document.querySelector('.expand-button');
-                if (expandBtn) {
-                    expandBtn.textContent = langIsEn ? "▼ See more" : "▼ Voir plus";
-                }
-            });
-            // Initialize with FR (default)
-            updateLangTexts('fr');
+            if (langToggle) {
+                langToggle.classList.toggle('active', currentLang === 'en');
+                langToggle.addEventListener('click', function(evt) {
+                    // toggle lang
+                    currentLang = (currentLang === 'fr') ? 'en' : 'fr';
+                    updateLangTexts(currentLang);
+                });
+            }
+            // Appliquer la langue dès chargement
+            updateLangTexts(currentLang);
         });
     </script>
 </body>
 </html>
+
